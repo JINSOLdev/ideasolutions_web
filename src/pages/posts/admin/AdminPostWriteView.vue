@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="px-4 py-4">{{ id ? '게시글 수정' : '고객문의 작성' }}</h2>
+        <h2 class="px-4 py-4">{{ id ? '게시글 수정' : '공지사항 작성' }}</h2>
         <hr class="mx-4" />
         <PostForm v-model="form" @submit.prevent="save">
             <template #actions>

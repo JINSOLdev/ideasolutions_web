@@ -112,7 +112,7 @@ export function adminCreatePost(data) {
         alert('로그인이 필요합니다.')
         return
     }
-    return post.post('/api/admin/post', data, {
+    return post.post(`/api/admin/post`, data, {
         headers: { Authorization: `${token}` },
     })
 }

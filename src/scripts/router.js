@@ -9,6 +9,7 @@ import PostList from '@/pages/posts/user/PostListView.vue';
 import PostWrite from '@/pages/posts/user/PostWriteView.vue';
 import PostDetail from '@/pages/posts/user/PostDetailView.vue';
 import AdminPostDetail from '@/pages/posts/admin/AdminPostDetailView.vue';
+import AdminPostWriteCreate from '@/pages/posts/admin/AdminPostWriteView.vue'
 import AdminPostWriteEdit from '@/pages/posts/admin/AdminPostWriteView.vue';
 import AdminPostList from '@/pages/posts/admin/AdminPostListView.vue'
 import Admin from '@/pages/AdminView.vue';
@@ -63,7 +64,7 @@ const routes = [
         component: PostList,
     },
     {
-        path: '/post',
+        path: '/post/write',
         name: 'PostWriteCreate',
         component: PostWrite,
     },
@@ -79,6 +80,11 @@ const routes = [
         props: true,
     },
     {
+        path: '/admin/post/write',
+        name: 'AdminPostWriteCreate',
+        component: AdminPostWriteCreate,
+    },
+    {
         path: '/admin/post/:id',
         name: 'AdminPostDetail',
         component: AdminPostDetail,
@@ -89,7 +95,7 @@ const routes = [
         component : AdminPostWriteEdit
     },
     {
-        path: '/admin',
+        path: '/admin/posts',
         name : 'AdminPostList',
         component: AdminPostList,
     }

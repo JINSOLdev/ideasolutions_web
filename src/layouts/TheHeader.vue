@@ -1,38 +1,50 @@
 <template>
     <header>
         <div class="header-content">
-            <div class="username">
-                <span> <router-link to="/">{{ username }}</router-link></span>님, 안녕하세요!
+            <div class="left-content">
+                <div class="username">
+                    <span>
+                        <router-link to="/">{{ username }}</router-link></span
+                    >님, 안녕하세요!
+                </div>
             </div>
-            <ul class="menu">
-                <li>
-                    <router-link to="/">홈</router-link>
-                </li>
-                <li>
-                    <router-link to="/about">회사소개</router-link>
-                </li>
-                <li>
-                    <router-link to="/products">제품소개</router-link>
-                </li>
-                <li>
-                    <router-link to="/posts/write">고객문의</router-link>
-                </li>
-                <li>
-                    <router-link to="/posts">고객지원</router-link>
-                </li>
-                <li v-if="!isLoggedIn">
-                    <router-link to="/login">로그인</router-link>
-                </li>
-                <li v-if="isLoggedIn && !adminLoggedIn">
-                    <router-link to="/myPage">마이페이지</router-link>
-                </li>
-                <li v-if="adminLoggedIn">
-                    <router-link to="/admin">관리자페이지</router-link>
-                </li>
-                <li v-if="isLoggedIn">
-                    <router-link to="/login" @click="logout">로그아웃</router-link>
-                </li>
-            </ul>
+            <div class="right-content">
+                <ul class="menu">
+                    <li>
+                        <router-link to="/">홈</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/about">회사소개</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/products">제품소개</router-link>
+                    </li>
+                    <li v-if="isLoggedIn && !adminLoggedIn">
+                        <router-link to="/post/write">고객문의</router-link>
+                    </li>
+                    <li v-if="adminLoggedIn">
+                        <router-link to="/admin/post/write">공지사항 작성</router-link>
+                    </li>
+                    <li v-if="isLoggedIn && !adminLoggedIn">
+                        <router-link to="/posts">고객지원</router-link>
+                    </li>
+                    <li v-if="adminLoggedIn">
+                        <router-link to="/admin/posts">전체 문의글</router-link>
+                    </li>
+                    <li v-if="!isLoggedIn">
+                        <router-link to="/login">로그인</router-link>
+                    </li>
+                    <li v-if="isLoggedIn && !adminLoggedIn">
+                        <router-link to="/myPage">마이페이지</router-link>
+                    </li>
+                    <li v-if="adminLoggedIn">
+                        <router-link to="/admin">관리자페이지</router-link>
+                    </li>
+                    <li v-if="isLoggedIn">
+                        <router-link to="/login" @click="logout">로그아웃</router-link>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
 </template>
@@ -82,7 +94,7 @@ export default {
 
 span {
     font-weight: bold;
-    text-decoration: underline ;
+    text-decoration: underline;
     color: #333;
     margin-right: 10px;
 }

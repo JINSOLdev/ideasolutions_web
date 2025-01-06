@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="px-4 py-4">온라인 문의</h2>
+        <h2 class="px-4 py-4">전체 문의글</h2>
         <hr class="mx-4" />
 
         <!-- PostFilter에 params 객체를 v-model로 바인딩 -->
