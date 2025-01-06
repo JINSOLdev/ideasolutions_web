@@ -21,7 +21,7 @@ export const useAuthStore = defineStore('auth', () => {
     const login = (newToken) => {
         localStorage.setItem('authToken', newToken);
         token.value = newToken;
-        // checkLoginStatus();
+        checkLoginStatus();
     };
 
     const logout = () => {
